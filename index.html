@@ -1,0 +1,4155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O futuro do José</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo Animado com Partículas de Luz (Animação de Futuro) -->
+    <canvas id="future-canvas"></canvas>
+
+    <!-- Cabeçalho Suave -->
+    <header class="navbar">
+        <div class="logo">O futuro do José</div>
+        <nav class="nav-links">
+            <a href="#tres-anos">3 Anos</a>
+            <a href="#dez-anos">10 Anos</a>
+            <a href="#quinze-anos">15 Anos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Boas-vindas -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">Jornada de Vida & Propósito</span>
+            <h1>O futuro do <span>José</span></h1>
+            <p>Uma caminhada tranquila, construída passo a passo com dedicação, equilíbrio e sonhos realizados ao longo do tempo.</p>
+            <a href="#tres-anos" class="btn-relax">Explorar Linha do Tempo ↓</a>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo com as 3 Seções -->
+    <main class="timeline-container">
+        <div class="timeline-line" id="timeline-progress"></div>
+
+        <!-- Seção 1: Daqui a 3 Anos -->
+        <section id="tres-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 3 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🎓🩺</div>
+                <h2>O Início de um Grande Propósito</h2>
+                <p>
+                    Conclusão do Ensino Médio e o início de um novo ciclo muito esperado: o ingresso na <strong>faculdade de Medicina</strong>. 
+                    Um momento de descobertas, novas amizades no ambiente acadêmico e os primeiros passos na missão de cuidar de pessoas.
+                </p>
+                <div class="tags">
+                    <span>Formatura Ensino Médio</span>
+                    <span>Faculdade de Medicina</span>
+                    <span>Novas Conexões</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Daqui a 10 Anos -->
+        <section id="dez-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 10 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">👨‍⚕️🏡</div>
+                <h2>Realização Profissional e Família</h2>
+                <p>
+                    Já <strong>formado em Medicina</strong>, exercendo a profissão com empatia e segurança. 
+                    Ao lado da carreira consolidada, a construção de um lar acolhedor e o sonho realizado de <strong>ter uma família</strong>, 
+                    celebrando momentos leves, viagens e reuniões com quem mais importa.
+                </p>
+                <div class="tags">
+                    <span>Médico Formado</span>
+                    <span>Construção da Família</span>
+                    <span>Equilíbrio & Afeto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Daqui a 15 Anos -->
+        <section id="quinze-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 15 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">☀️🌿</div>
+                <h2>Plenitude e Estabilidade Financeira</h2>
+                <p>
+                    Trabalhando com paixão na área médica e colhendo os frutos de anos de dedicação. 
+                    Uma fase marcada pela <strong>estabilidade financeira</strong>, tranquilidade para aproveitar a vida com calma, 
+                    proporcionar conforto à família e viver com liberdade e bem-estar.
+                </p>
+                <div class="tags">
+                    <span>Estabilidade Financeira</span>
+                    <span>Carreira Consolidada</span>
+                    <span>Qualidade de Vida</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Espaço Interativo de Reflexão -->
+    <section class="future-note reveal">
+        <div class="note-box">
+            <h3>✨ Mensagem para o José do Futuro</h3>
+            <p id="inspirational-quote">"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."</p>
+            <button id="btn-new-quote" class="btn-soft">Nova Mensagem</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>O futuro do José • Planejado com calma, foco e otimismo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. Arquivo style.css
+CSS
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O futuro do José</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo Animado com Partículas de Luz (Animação de Futuro) -->
+    <canvas id="future-canvas"></canvas>
+
+    <!-- Cabeçalho Suave -->
+    <header class="navbar">
+        <div class="logo">O futuro do José</div>
+        <nav class="nav-links">
+            <a href="#tres-anos">3 Anos</a>
+            <a href="#dez-anos">10 Anos</a>
+            <a href="#quinze-anos">15 Anos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Boas-vindas -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">Jornada de Vida & Propósito</span>
+            <h1>O futuro do <span>José</span></h1>
+            <p>Uma caminhada tranquila, construída passo a passo com dedicação, equilíbrio e sonhos realizados ao longo do tempo.</p>
+            <a href="#tres-anos" class="btn-relax">Explorar Linha do Tempo ↓</a>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo com as 3 Seções -->
+    <main class="timeline-container">
+        <div class="timeline-line" id="timeline-progress"></div>
+
+        <!-- Seção 1: Daqui a 3 Anos -->
+        <section id="tres-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 3 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🎓🩺</div>
+                <h2>O Início de um Grande Propósito</h2>
+                <p>
+                    Conclusão do Ensino Médio e o início de um novo ciclo muito esperado: o ingresso na <strong>faculdade de Medicina</strong>. 
+                    Um momento de descobertas, novas amizades no ambiente acadêmico e os primeiros passos na missão de cuidar de pessoas.
+                </p>
+                <div class="tags">
+                    <span>Formatura Ensino Médio</span>
+                    <span>Faculdade de Medicina</span>
+                    <span>Novas Conexões</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Daqui a 10 Anos -->
+        <section id="dez-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 10 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">👨‍⚕️🏡</div>
+                <h2>Realização Profissional e Família</h2>
+                <p>
+                    Já <strong>formado em Medicina</strong>, exercendo a profissão com empatia e segurança. 
+                    Ao lado da carreira consolidada, a construção de um lar acolhedor e o sonho realizado de <strong>ter uma família</strong>, 
+                    celebrando momentos leves, viagens e reuniões com quem mais importa.
+                </p>
+                <div class="tags">
+                    <span>Médico Formado</span>
+                    <span>Construção da Família</span>
+                    <span>Equilíbrio & Afeto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Daqui a 15 Anos -->
+        <section id="quinze-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 15 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">☀️🌿</div>
+                <h2>Plenitude e Estabilidade Financeira</h2>
+                <p>
+                    Trabalhando com paixão na área médica e colhendo os frutos de anos de dedicação. 
+                    Uma fase marcada pela <strong>estabilidade financeira</strong>, tranquilidade para aproveitar a vida com calma, 
+                    proporcionar conforto à família e viver com liberdade e bem-estar.
+                </p>
+                <div class="tags">
+                    <span>Estabilidade Financeira</span>
+                    <span>Carreira Consolidada</span>
+                    <span>Qualidade de Vida</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Espaço Interativo de Reflexão -->
+    <section class="future-note reveal">
+        <div class="note-box">
+            <h3>✨ Mensagem para o José do Futuro</h3>
+            <p id="inspirational-quote">"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."</p>
+            <button id="btn-new-quote" class="btn-soft">Nova Mensagem</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>O futuro do José • Planejado com calma, foco e otimismo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. Arquivo style.css
+CSS
+￼
+￼
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
+3. Arquivo script.js
+JavaScript
+￼
+￼
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+Destaques do Projeto:
+Paleta Amarela Relaxante: Degradê suave de amarelo creme (#FFFDF5) até amarelo dourado quente (#FDE68A), com cartões translúcidos estilo glassmorphism que passam sensação de calma e bem-estar.
+
+Animação de Futuro (#future-canvas + Linha do Tempo): Partículas douradas luminosas flutuam continuamente para cima representando sonhos e ideias avançando no tempo, enquanto a linha vertical dourada se preenche conforme você rola pelas etapas de 3 anos, 10 anos e 15 anos.
+
+￼
+￼<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O futuro do José</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo Animado com Partículas de Luz (Animação de Futuro) -->
+    <canvas id="future-canvas"></canvas>
+
+    <!-- Cabeçalho Suave -->
+    <header class="navbar">
+        <div class="logo">O futuro do José</div>
+        <nav class="nav-links">
+            <a href="#tres-anos">3 Anos</a>
+            <a href="#dez-anos">10 Anos</a>
+            <a href="#quinze-anos">15 Anos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Boas-vindas -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">Jornada de Vida & Propósito</span>
+            <h1>O futuro do <span>José</span></h1>
+            <p>Uma caminhada tranquila, construída passo a passo com dedicação, equilíbrio e sonhos realizados ao longo do tempo.</p>
+            <a href="#tres-anos" class="btn-relax">Explorar Linha do Tempo ↓</a>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo com as 3 Seções -->
+    <main class="timeline-container">
+        <div class="timeline-line" id="timeline-progress"></div>
+
+        <!-- Seção 1: Daqui a 3 Anos -->
+        <section id="tres-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 3 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🎓🩺</div>
+                <h2>O Início de um Grande Propósito</h2>
+                <p>
+                    Conclusão do Ensino Médio e o início de um novo ciclo muito esperado: o ingresso na <strong>faculdade de Medicina</strong>. 
+                    Um momento de descobertas, novas amizades no ambiente acadêmico e os primeiros passos na missão de cuidar de pessoas.
+                </p>
+                <div class="tags">
+                    <span>Formatura Ensino Médio</span>
+                    <span>Faculdade de Medicina</span>
+                    <span>Novas Conexões</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Daqui a 10 Anos -->
+        <section id="dez-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 10 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">👨‍⚕️🏡</div>
+                <h2>Realização Profissional e Família</h2>
+                <p>
+                    Já <strong>formado em Medicina</strong>, exercendo a profissão com empatia e segurança. 
+                    Ao lado da carreira consolidada, a construção de um lar acolhedor e o sonho realizado de <strong>ter uma família</strong>, 
+                    celebrando momentos leves, viagens e reuniões com quem mais importa.
+                </p>
+                <div class="tags">
+                    <span>Médico Formado</span>
+                    <span>Construção da Família</span>
+                    <span>Equilíbrio & Afeto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Daqui a 15 Anos -->
+        <section id="quinze-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 15 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">☀️🌿</div>
+                <h2>Plenitude e Estabilidade Financeira</h2>
+                <p>
+                    Trabalhando com paixão na área médica e colhendo os frutos de anos de dedicação. 
+                    Uma fase marcada pela <strong>estabilidade financeira</strong>, tranquilidade para aproveitar a vida com calma, 
+                    proporcionar conforto à família e viver com liberdade e bem-estar.
+                </p>
+                <div class="tags">
+                    <span>Estabilidade Financeira</span>
+                    <span>Carreira Consolidada</span>
+                    <span>Qualidade de Vida</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Espaço Interativo de Reflexão -->
+    <section class="future-note reveal">
+        <div class="note-box">
+            <h3>✨ Mensagem para o José do Futuro</h3>
+            <p id="inspirational-quote">"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."</p>
+            <button id="btn-new-quote" class="btn-soft">Nova Mensagem</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>O futuro do José • Planejado com calma, foco e otimismo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. Arquivo style.css
+CSS
+￼
+￼
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
+3. Arquivo script.js
+JavaScript
+￼
+￼
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O futuro do José</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo Animado com Partículas de Luz (Animação de Futuro) -->
+    <canvas id="future-canvas"></canvas>
+
+    <!-- Cabeçalho Suave -->
+    <header class="navbar">
+        <div class="logo">O futuro do José</div>
+        <nav class="nav-links">
+            <a href="#tres-anos">3 Anos</a>
+            <a href="#dez-anos">10 Anos</a>
+            <a href="#quinze-anos">15 Anos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Boas-vindas -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">Jornada de Vida & Propósito</span>
+            <h1>O futuro do <span>José</span></h1>
+            <p>Uma caminhada tranquila, construída passo a passo com dedicação, equilíbrio e sonhos realizados ao longo do tempo.</p>
+            <a href="#tres-anos" class="btn-relax">Explorar Linha do Tempo ↓</a>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo com as 3 Seções -->
+    <main class="timeline-container">
+        <div class="timeline-line" id="timeline-progress"></div>
+
+        <!-- Seção 1: Daqui a 3 Anos -->
+        <section id="tres-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 3 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🎓🩺</div>
+                <h2>O Início de um Grande Propósito</h2>
+                <p>
+                    Conclusão do Ensino Médio e o início de um novo ciclo muito esperado: o ingresso na <strong>faculdade de Medicina</strong>. 
+                    Um momento de descobertas, novas amizades no ambiente acadêmico e os primeiros passos na missão de cuidar de pessoas.
+                </p>
+                <div class="tags">
+                    <span>Formatura Ensino Médio</span>
+                    <span>Faculdade de Medicina</span>
+                    <span>Novas Conexões</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Daqui a 10 Anos -->
+        <section id="dez-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 10 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">👨‍⚕️🏡</div>
+                <h2>Realização Profissional e Família</h2>
+                <p>
+                    Já <strong>formado em Medicina</strong>, exercendo a profissão com empatia e segurança. 
+                    Ao lado da carreira consolidada, a construção de um lar acolhedor e o sonho realizado de <strong>ter uma família</strong>, 
+                    celebrando momentos leves, viagens e reuniões com quem mais importa.
+                </p>
+                <div class="tags">
+                    <span>Médico Formado</span>
+                    <span>Construção da Família</span>
+                    <span>Equilíbrio & Afeto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Daqui a 15 Anos -->
+        <section id="quinze-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 15 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">☀️🌿</div>
+                <h2>Plenitude e Estabilidade Financeira</h2>
+                <p>
+                    Trabalhando com paixão na área médica e colhendo os frutos de anos de dedicação. 
+                    Uma fase marcada pela <strong>estabilidade financeira</strong>, tranquilidade para aproveitar a vida com calma, 
+                    proporcionar conforto à família e viver com liberdade e bem-estar.
+                </p>
+                <div class="tags">
+                    <span>Estabilidade Financeira</span>
+                    <span>Carreira Consolidada</span>
+                    <span>Qualidade de Vida</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Espaço Interativo de Reflexão -->
+    <section class="future-note reveal">
+        <div class="note-box">
+            <h3>✨ Mensagem para o José do Futuro</h3>
+            <p id="inspirational-quote">"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."</p>
+            <button id="btn-new-quote" class="btn-soft">Nova Mensagem</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>O futuro do José • Planejado com calma, foco e otimismo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. Arquivo style.css
+CSS
+￼
+￼
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
+3. Arquivo script.js
+JavaScript
+￼
+￼
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O futuro do José</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo Animado com Partículas de Luz (Animação de Futuro) -->
+    <canvas id="future-canvas"></canvas>
+
+    <!-- Cabeçalho Suave -->
+    <header class="navbar">
+        <div class="logo">O futuro do José</div>
+        <nav class="nav-links">
+            <a href="#tres-anos">3 Anos</a>
+            <a href="#dez-anos">10 Anos</a>
+            <a href="#quinze-anos">15 Anos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Boas-vindas -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">Jornada de Vida & Propósito</span>
+            <h1>O futuro do <span>José</span></h1>
+            <p>Uma caminhada tranquila, construída passo a passo com dedicação, equilíbrio e sonhos realizados ao longo do tempo.</p>
+            <a href="#tres-anos" class="btn-relax">Explorar Linha do Tempo ↓</a>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo com as 3 Seções -->
+    <main class="timeline-container">
+        <div class="timeline-line" id="timeline-progress"></div>
+
+        <!-- Seção 1: Daqui a 3 Anos -->
+        <section id="tres-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 3 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🎓🩺</div>
+                <h2>O Início de um Grande Propósito</h2>
+                <p>
+                    Conclusão do Ensino Médio e o início de um novo ciclo muito esperado: o ingresso na <strong>faculdade de Medicina</strong>. 
+                    Um momento de descobertas, novas amizades no ambiente acadêmico e os primeiros passos na missão de cuidar de pessoas.
+                </p>
+                <div class="tags">
+                    <span>Formatura Ensino Médio</span>
+                    <span>Faculdade de Medicina</span>
+                    <span>Novas Conexões</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Daqui a 10 Anos -->
+        <section id="dez-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 10 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">👨‍⚕️🏡</div>
+                <h2>Realização Profissional e Família</h2>
+                <p>
+                    Já <strong>formado em Medicina</strong>, exercendo a profissão com empatia e segurança. 
+                    Ao lado da carreira consolidada, a construção de um lar acolhedor e o sonho realizado de <strong>ter uma família</strong>, 
+                    celebrando momentos leves, viagens e reuniões com quem mais importa.
+                </p>
+                <div class="tags">
+                    <span>Médico Formado</span>
+                    <span>Construção da Família</span>
+                    <span>Equilíbrio & Afeto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Daqui a 15 Anos -->
+        <section id="quinze-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 15 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">☀️🌿</div>
+                <h2>Plenitude e Estabilidade Financeira</h2>
+                <p>
+                    Trabalhando com paixão na área médica e colhendo os frutos de anos de dedicação. 
+                    Uma fase marcada pela <strong>estabilidade financeira</strong>, tranquilidade para aproveitar a vida com calma, 
+                    proporcionar conforto à família e viver com liberdade e bem-estar.
+                </p>
+                <div class="tags">
+                    <span>Estabilidade Financeira</span>
+                    <span>Carreira Consolidada</span>
+                    <span>Qualidade de Vida</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Espaço Interativo de Reflexão -->
+    <section class="future-note reveal">
+        <div class="note-box">
+            <h3>✨ Mensagem para o José do Futuro</h3>
+            <p id="inspirational-quote">"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."</p>
+            <button id="btn-new-quote" class="btn-soft">Nova Mensagem</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>O futuro do José • Planejado com calma, foco e otimismo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. Arquivo style.css
+CSS
+￼
+￼
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700pdocument.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const e
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals =
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const e document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scroldocument.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.al
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const epha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const e
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineP
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const erogress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualiza
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const er linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const e
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.updat
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const ee();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});led = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});x;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
+3. Arquivo script.js
+JavaScript
+￼
+￼
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+Destaques do Projeto:
+Paleta Amarela Relaxante: Degradê suave de amarelo creme (#FFFDF5) até amarelo dourado quente (#FDE68A), com cartões translúcidos estilo glassmorphism que passam sensação de calma e bem-estar.
+
+Animação de Futuro (#future-canvas + Linha do Tempo): Partículas douradas luminosas flutuam continuamente para cima representando sonhos e ideias avançando no tempo, enquanto a linha vertical dourada se preenche conforme você rola pelas etapas de 3 anos, 10 anos e 15 anos.
+
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+
+
+￼
+4 Hydrogen
+￼
+Suas conversas de SEED não são usadas para aprimorar nossos modelos. O Gemini não é humano. Ele p
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O futuro do José</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Fundo Animado com Partículas de Luz (Animação de Futuro) -->
+    <canvas id="future-canvas"></canvas>
+
+    <!-- Cabeçalho Suave -->
+    <header class="navbar">
+        <div class="logo">O futuro do José</div>
+        <nav class="nav-links">
+            <a href="#tres-anos">3 Anos</a>
+            <a href="#dez-anos">10 Anos</a>
+            <a href="#quinze-anos">15 Anos</a>
+        </nav>
+    </header>
+
+    <!-- Seção Principal / Boas-vindas -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <span class="badge">Jornada de Vida & Propósito</span>
+            <h1>O futuro do <span>José</span></h1>
+            <p>Uma caminhada tranquila, construída passo a passo com dedicação, equilíbrio e sonhos realizados ao longo do tempo.</p>
+            <a href="#tres-anos" class="btn-relax">Explorar Linha do Tempo ↓</a>
+        </div>
+    </section>
+
+    <!-- Linha do Tempo com as 3 Seções -->
+    <main class="timeline-container">
+        <div class="timeline-line" id="timeline-progress"></div>
+
+        <!-- Seção 1: Daqui a 3 Anos -->
+        <section id="tres-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 3 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">🎓🩺</div>
+                <h2>O Início de um Grande Propósito</h2>
+                <p>
+                    Conclusão do Ensino Médio e o início de um novo ciclo muito esperado: o ingresso na <strong>faculdade de Medicina</strong>. 
+                    Um momento de descobertas, novas amizades no ambiente acadêmico e os primeiros passos na missão de cuidar de pessoas.
+                </p>
+                <div class="tags">
+                    <span>Formatura Ensino Médio</span>
+                    <span>Faculdade de Medicina</span>
+                    <span>Novas Conexões</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 2: Daqui a 10 Anos -->
+        <section id="dez-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 10 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">👨‍⚕️🏡</div>
+                <h2>Realização Profissional e Família</h2>
+                <p>
+                    Já <strong>formado em Medicina</strong>, exercendo a profissão com empatia e segurança. 
+                    Ao lado da carreira consolidada, a construção de um lar acolhedor e o sonho realizado de <strong>ter uma família</strong>, 
+                    celebrando momentos leves, viagens e reuniões com quem mais importa.
+                </p>
+                <div class="tags">
+                    <span>Médico Formado</span>
+                    <span>Construção da Família</span>
+                    <span>Equilíbrio & Afeto</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Daqui a 15 Anos -->
+        <section id="quinze-anos" class="timeline-section reveal">
+            <div class="time-marker">
+                <span class="year-tag">Daqui a 15 Anos</span>
+                <div class="dot"></div>
+            </div>
+            <div class="glass-card">
+                <div class="card-icon">☀️🌿</div>
+                <h2>Plenitude e Estabilidade Financeira</h2>
+                <p>
+                    Trabalhando com paixão na área médica e colhendo os frutos de anos de dedicação. 
+                    Uma fase marcada pela <strong>estabilidade financeira</strong>, tranquilidade para aproveitar a vida com calma, 
+                    proporcionar conforto à família e viver com liberdade e bem-estar.
+                </p>
+                <div class="tags">
+                    <span>Estabilidade Financeira</span>
+                    <span>Carreira Consolidada</span>
+                    <span>Qualidade de Vida</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Espaço Interativo de Reflexão -->
+    <section class="future-note reveal">
+        <div class="note-box">
+            <h3>✨ Mensagem para o José do Futuro</h3>
+            <p id="inspirational-quote">"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."</p>
+            <button id="btn-new-quote" class="btn-soft">Nova Mensagem</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>O futuro do José • Planejado com calma, foco e otimismo.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. Arquivo style.css
+CSS
+￼
+￼
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
+3. Arquivo script.js
+JavaScript
+￼
+￼
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+Destaques do Projeto:
+Paleta Amarela Relaxante: Degradê suave de amarelo creme (#FFFDF5) até amarelo dourado quente (#FDE68A), com cartões translúcidos estilo glassmorphism que passam sensação de calma e bem-estar.
+
+Animação de Futuro (#future-canvas + Linha do Tempo): Partículas douradas luminosas flutuam continuamente para cima representando sonhos e ideias avançando no tempo, enquanto a linha vertical dourada se preenche conforme você rola pelas etapas de 3 anos, 10 anos e 15 anos.
+
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+
+
+￼
+4 Hydrogen
+￼
+Suas conversas de SEED não são usadas para aprimorar nossos modelos. O Gemini não é humano. Ele p
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+Destaques do Projeto:
+Paleta Amarela Relaxante: Degradê suave de amarelo creme (#FFFDF5) até amarelo dourado quente (#FDE68A), com cartões translúcidos estilo glassmorphism que passam sensação de calma e bem-estar.
+
+Animação de Futuro (#future-canvas + Linha do Tempo): Partículas douradas luminosas flutuam continuamente para cima representando sonhos e ideias avançando no tempo, enquanto a linha vertical dourada se preenche conforme você rola pelas etapas de 3 anos, 10 anos e 15 anos.
+
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+
+
+￼
+4 Hydrogen
+￼
+Suas conversas de SEED não são usadas para aprimorar nossos modelos. O Gemini não é humano. Ele p
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+Destaques do Projeto:
+Paleta Amarela Relaxante: Degradê suave de amarelo creme (#FFFDF5) até amarelo dourado quente (#FDE68A), com cartões translúcidos estilo glassmorphism que passam sensação de calma e bem-estar.
+
+Animação de Futuro (#future-canvas + Linha do Tempo): Partículas douradas luminosas flutuam continuamente para cima representando sonhos e ideias avançando no tempo, enquanto a linha vertical dourada se preenche conforme você rola pelas etapas de 3 anos, 10 anos e 15 anos.
+
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+￼
+
+
+￼
+4 Hydrogen
+￼
+Suas conversas de SEED não são usadas para aprimorar nossos modelos. O Gemini não é humano. Ele p
+￼
+￼
+￼
+￼
+￼
+￼
+
+
+￼
+4 Hydrogen
+￼
+Suas conversas de SEED não são usadas para aprimorar nossos modelos. O Gemini não é humano. Ele p
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
+3. Arquivo script.js
+JavaScript
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Animação de Futuro no Fundo (Partículas Douradas Subindo Suavemente)
+    const canvas = document.getElementById("future-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let width, height;
+    let particles = [];
+
+    function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class LightOrb {
+        constructor() {
+            this.reset();
+            this.y = Math.random() * height;
+        }
+
+        reset() {
+            this.x = Math.random() * width;
+            this.y = height + 20;
+            this.radius = Math.random() * 6 + 2;
+            this.speedY = Math.random() * 0.6 + 0.2;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.alpha = Math.random() * 0.45 + 0.15;
+        }
+
+        update() {
+            this.y -= this.speedY;
+            this.x += this.speedX;
+            if (this.y < -20) {
+                this.reset();
+            }
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(245, 158, 11, ${this.alpha})`;
+            ctx.fill();
+        }
+    }
+
+    for (let i = 0; i < 45; i++) {
+        particles.push(new LightOrb());
+    }
+
+    function animateFutureParticles() {
+        ctx.clearRect(0, 0, width, height);
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+        requestAnimationFrame(animateFutureParticles);
+    }
+
+    animateFutureParticles();
+
+    // 2. Animação de Revelação das Seções e Preenchimento da Linha do Tempo
+    const reveals = document.querySelectorAll(".reveal");
+    const timelineContainer = document.querySelector(".timeline-container");
+    const timelineProgress = document.getElementById("timeline-progress");
+
+    function handleScroll() {
+        const windowHeight = window.innerHeight;
+
+        // Revelar cards suavemente
+        reveals.forEach(el => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 90) {
+                el.classList.add("visible");
+            }
+        });
+
+        // Atualizar linha dourada do tempo conforme a rolagem
+        const rect = timelineContainer.getBoundingClientRect();
+        const totalHeight = timelineContainer.offsetHeight - 120;
+        const scrolled = Math.min(Math.max(windowHeight / 2 - rect.top, 0), totalHeight);
+        timelineProgress.style.height = `${scrolled}px`;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Executa ao carregar
+
+    // 3. Frases Motivacionais para o Futuro do José
+    const quotes = [
+        '"Cada dia de estudo hoje é um passo tranquilo em direção à vida que você está construindo."',
+        '"A medicina começa com o desejo sincero de cuidar — e você já carrega esse propósito."',
+        '"Daqui a 10 anos, você vai olhar para trás com orgulho da sua dedicação e da família que construiu."',
+        '"O equilíbrio entre trabalho, família e paz financeira é o verdadeiro sucesso."'
+    ];
+
+    const btnNewQuote = document.getElementById("btn-new-quote");
+    const quoteText = document.getElementById("inspirational-quote");
+    let quoteIndex = 0;
+
+    btnNewQuote.addEventListener("click", () => {
+        quoteText.style.opacity = 0;
+        setTimeout(() => {
+            quoteIndex = (quoteIndex + 1) % quotes.length;
+            quoteText.textContent = quotes[quoteIndex];
+            quoteText.style.opacity = 1;
+        }, 300);
+    });
+});
+Destaques do Projeto:
+Paleta Amarela Relaxante: Degradê suave de amarelo creme (#FFFDF5) até amarelo dourado quente (#FDE68A), com cartões translúcidos estilo glassmorphism que passam sensação de calma e bem-estar.
+
+Animação de Futuro (#future-canvas + Linha do Tempo): Partículas douradas luminosas flutuam continuamente para cima representando sonhos e ideias avançando no tempo, enquanto a linha vertical dourada se preenche conforme você rola pelas etapas de 3 anos, 10 anos e 15 anos.
+
+
+
+
+
+Suas conversas de SEED não são usadas para aprimorar nossos modelos. O Gemini não é humano. Ele p

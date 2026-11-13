@@ -1,0 +1,332 @@
+:root {
+    --yellow-bg: #FFFBEB;
+    --yellow-soft: #FEF3C7;
+    --yellow-warm: #FDE68A;
+    --yellow-gold: #F59E0B;
+    --yellow-amber: #D97706;
+    --text-dark: #3B2F1E;
+    --text-muted: #6B5B45;
+    --glass-white: rgba(255, 255, 255, 0.72);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(180deg, #FFFDF5 0%, #FEF3C7 50%, #FDE68A 100%);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Fundo Animado (Partículas de Futuro) */
+#future-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Navegação */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8%;
+    background: rgba(255, 251, 235, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--yellow-amber);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 400;
+    font-size: 0.95rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background: var(--yellow-warm);
+    color: var(--text-dark);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.badge {
+    display: inline-block;
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-warm);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.6rem;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--text-dark);
+}
+
+.hero h1 span {
+    color: var(--yellow-amber);
+    font-style: italic;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+}
+
+.btn-relax {
+    display: inline-block;
+    background: var(--yellow-gold);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn-relax:hover {
+    background: var(--yellow-amber);
+    transform: translateY(-3px);
+}
+
+/* Linha do Tempo */
+.timeline-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+/* Trilha vertical suave */
+.timeline-container::before {
+    content: "";
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    bottom: 80px;
+    width: 3px;
+    background: rgba(245, 158, 11, 0.25);
+    border-radius: 3px;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 38px;
+    top: 40px;
+    width: 3px;
+    height: 0;
+    background: var(--yellow-gold);
+    border-radius: 3px;
+    transition: height 0.3s ease-out;
+}
+
+.timeline-section {
+    position: relative;
+    padding-left: 75px;
+    margin-bottom: 65px;
+}
+
+.time-marker {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.dot {
+    position: absolute;
+    left: 29px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 4px solid var(--yellow-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.year-tag {
+    background: var(--yellow-gold);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Cards Estilo Vidro Relaxante */
+.glass-card {
+    background: var(--glass-white);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(180, 130, 40, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(180, 130, 40, 0.14);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+}
+
+.glass-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+}
+
+.glass-card p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+    margin-bottom: 22px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tags span {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    padding: 6px 14px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Mensagem Inspiradora */
+.future-note {
+    max-width: 750px;
+    margin: 0 auto 80px;
+    padding: 0 20px;
+}
+
+.note-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid var(--yellow-warm);
+    border-radius: 24px;
+    padding: 35px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(217, 119, 6, 0.08);
+}
+
+.note-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--yellow-amber);
+    margin-bottom: 12px;
+}
+
+.note-box p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    transition: opacity 0.4s ease;
+}
+
+.btn-soft {
+    background: var(--yellow-soft);
+    color: var(--yellow-amber);
+    border: 1px solid var(--yellow-gold);
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn-soft:hover {
+    background: var(--yellow-gold);
+    color: #ffffff;
+}
+
+/* Animação de Revelação Suave ao Rolar */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+@media (max-width: 600px) {
+    .hero h1 { font-size: 2.6rem; }
+    .timeline-container::before, .timeline-line { left: 20px; }
+    .dot { left: 11px; }
+    .timeline-section { padding-left: 48px; }
+    .nav-links { display: none; }
+}
